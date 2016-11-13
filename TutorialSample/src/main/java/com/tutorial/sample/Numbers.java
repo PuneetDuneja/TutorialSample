@@ -21,7 +21,7 @@ public class Numbers {
 	}
 	
 	public int[] sortArray(int[] list){
-		
+		System.out.println("this is to trigger build");
 		Arrays.sort(list);
 		return list;
 	}

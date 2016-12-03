@@ -39,27 +39,20 @@ public class AuthenticateTest {
 		when(userInfo.getDOB()).thenReturn("01/04/0000");
 		when(userInfo.getPhoneNumber()).thenReturn("000");
 		
-		//Ad0100 should be reversed to 0010dA
-		
-		//return first 2 letters of the all the entries and re
-		//verse the complete string
 		userStorage=mock(UserStorage.class);
-		when(userStorage.readFromFile()).thenReturn("0010dA");
+		when(userStorage.readFromFile()).thenReturn("Admin01/04/0000000");
 			
 	}
 	
 	@Test
 	public void testIsUserAutherized(){
-		try {
-			Authenticate auth = new Authenticate();
-			assertTrue(auth.isUserAuthorized(userInfo, userStorage));
-			Mockito.verify(userInfo).getName();
-			Mockito.verify(userInfo).getDOB();
-			Mockito.verify(userInfo).getPhoneNumber();
-			Mockito.verify(userStorage).readFromFile();
-		}catch (Exception ex){
-			ex.printStackTrace();
-		}
+		Authenticate auth = new Authenticate();
+		assertTrue(auth.isUserAuthorized(userInfo, userStorage));
+		Mockito.verify(userInfo).getName();
+		Mockito.verify(userInfo).getDOB();
+		Mockito.verify(userInfo).getPhoneNumber();
+		Mockito.verify(userStorage).readFromFile();
+		
 	}
 	
 	

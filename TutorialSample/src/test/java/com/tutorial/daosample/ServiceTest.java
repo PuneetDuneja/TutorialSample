@@ -40,7 +40,18 @@ public class ServiceTest {
 		Assert.assertEquals("My surname", actual.getSurname());
 		Mockito.verify(myDao).findById(1L);
 	}
+	@Test
+	public void fetchKey(){
+		Service myService = new Service(myDao);
+		String expectedKey = "My first nameMy surname";
+		String actual=myService.fetchKey(1L);
+		Assert.assertEquals(expectedKey, actual);
+		//What are we supposed to verify here ?
+		Mockito.verify(myDao).findById(1L);
+	}
 
+	
+	//this is the stub used internally 
 	private Entity createTestEntity() {
 		Entity myEntity = new Entity();
 		myEntity.setFirstName("My first name");

@@ -12,7 +12,7 @@ public class CharacterSearch {
 	public boolean isCharacterAvailable(String str,char c){
 		
 		if(str.indexOf(c)!=-1){
-			System.out.println("it contains letter,first change done to commit");
+			System.out.println("it contains letter,first change");
 			return true;
 		} else {
 			System.out.println("it does not contain letter");

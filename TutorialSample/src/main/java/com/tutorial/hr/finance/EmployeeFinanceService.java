@@ -21,7 +21,7 @@ public class EmployeeFinanceService {
 			basicPay=grossSalary*0.2;
 		}
 		PF=0.12*basicPay;
-		System.out.println("Implementation : calculated PF is "+PF);
+		System.out.println("Implementation : calculated PF is checking"+PF);
 		return PF;
 	}
 
